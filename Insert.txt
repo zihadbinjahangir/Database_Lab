@@ -1,0 +1,30 @@
+insert into Users values(1,'A','abcd@com','1234',1);
+insert into Users values(2,'B','abce@com','1234',1);
+insert into Users values(3,'C','abcf@com','1234',2);
+insert into Users values(4,'D','abcg@com','1234',2);
+insert into Users values(5,'E','abch@com','1234',3);
+insert into Users values(6,'F','abci@com','1234',3);
+
+insert into Donor values(1,'G','abcj@com','1234','013333','A+',20,1);
+insert into Donor values(2,'H','abck@com','1234','013333','B+',21,1);
+insert into Donor values(3,'I','abcl@com','1234','013333','A+',25,2);
+insert into Donor values(4,'J','abcm@com','1234','013333','AB+',30,2);
+insert into Donor values(5,'K','abcn@com','1234','013333','AB+',18,3);
+insert into Donor values(6,'L','abcp@com','1234','013333','B+',29,3);
+
+insert into Location values(1,'Dhaka');
+insert into Location values(2,'Khulna');
+insert into Location values(3,'Barisal');
+
+insert into Blood_group values(1,'A+',1);
+insert into Blood_group values(2,'B+',2);
+insert into Blood_group values(3,'A+',3);
+insert into Blood_group values(4,'AB+',4);
+insert into Blood_group values(5,'AB+',5);
+insert into Blood_group values(6,'B+',6);
+
+insert into Blood_request values(1,1,1,1);
+insert into Blood_request values(2,2,3,2);
+insert into Blood_request values(3,3,2,3);
+insert into Blood_request values(4,4,2,3);
+insert into Blood_request values(5,5,2,3);

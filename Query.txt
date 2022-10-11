@@ -1,0 +1,99 @@
+select * from users
+
+
+select Donor.name from Donor, Blood_group where Blood_group.donor_id = Donor.donor_id;
+
+
+select Donor.name, Donor.phone, Donor.blood_group from Blood_group,Donor where Blood_group.blood_group = Donor.blood_group;
+
+
+alter table Donor add location_name varchar(10);
+
+select * from Donor;
+
+update Donor set location_name = 'Dhaka' where location_id =1;
+update Donor set location_name = 'Khulna' where location_id =2;
+update Donor set location_name = 'Barisal' where location_id =3;
+update Donor set location_name = 'Dhaka' where location_id =4;
+update Donor set location_name = 'Khulna' where location_id =5;
+update Donor set location_name = 'Barisal' where location_id =6;
+
+select * from Donor;
+
+
+describe Donor;
+
+
+alter table Donor rename column location_name to address;
+
+
+select * from Donor;
+
+
+select name, age, address from Donor order by age;
+
+
+select name, blood_group, age, address from Donor order by blood_group;
+
+
+select count(blood_group) from Donor;
+
+
+ select avg(age), blood_group from Donor group by blood_group;
+
+
+ select max(age) from Donor;
+
+
+ select min(age) from Donor;
+
+
+select age,name from donor where donor.age <= 30 and donor.age >=20;
+
+
+select users.name as user_name, users.email from users, blood_request where users.user_id = blood_request.user_id;
+
+
+select Donor.name, Donor.phone, Donor.blood_group from Blood_group,Donor where Blood_group.blood_group = Donor.blood_group;
+
+
+create view donor_view as select donor_id, name, age, address as location from donor;
+
+
+select name, age, location from donor_view order by age;
+
+
+select avg(age), location from donor_view group by location ;
+
+
+drop view donor_view;
+
+
+select Blood_group.blood_group, Donor.name from Blood_group join donor on Blood_group.donor_id=Donor.donor_id;
+
+
+select Blood_group.blood_group, Donor.name from Blood_group left join donor on Blood_group.donor_id=Donor.donor_id;
+
+
+select Blood_group.blood_group, Donor.name from Blood_group right join donor on Blood_group.donor_id=Donor.donor_id;
+
+
+select Blood_group.blood_group, Donor.name from Blood_group full outer join donor on Blood_group.donor_id=Donor.donor_id;
+
+select distinct name, U.email 
+    from users U, blood_request B 
+    where U.user_id = B.user_id;
+    
+select
+    donor_id,
+    name,
+    age
+from
+    Donor
+where
+    age = (
+        select
+            max( age )
+        from
+            Donor
+    );
