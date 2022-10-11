@@ -164,4 +164,20 @@ select Blood_group.blood_group, Donor.name from Blood_group right join donor on 
 
 select Blood_group.blood_group, Donor.name from Blood_group full outer join donor on Blood_group.donor_id=Donor.donor_id;
 
-
+select distinct name, U.email 
+    from users U, blood_request B 
+    where U.user_id = B.user_id;
+    
+select
+    donor_id,
+    name,
+    age
+from
+    Donor
+where
+    age = (
+        select
+            max( age )
+        from
+            Donor
+    );
